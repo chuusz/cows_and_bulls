@@ -46,7 +46,7 @@ def cows_and_bulls():
             guess = int(input("Gues number between 1000 to 9999:\n"))
             if 999 < guess < 10000:
                 if guess == number:
-                    print("You guessed it after %s guesses!" % guesses)
+                    print(f"You guessed it after {guesses} guesses!")
                     break
                 else:
                     print(compare(guess, number))
