@@ -19,23 +19,14 @@ def compare(guess, number):
     for i in range(4):
         if guess[i] == number[i]:
             cows += 1
-            guess[i] = None
-            number[i] = None
+            guess[i], number[i] = None, None
     for i in range(4):
         if guess[i] == None:
             continue
         elif guess[i] in number:
             number[number.index(guess[i])] = None
             bulls += 1
-    if cows == 1 and bulls == 1:
-        result = "1 cow & 1 bull"
-    elif bulls == 1:
-        result = f"{cows} cows & 1 bull"
-    elif cows == 1:
-        result = f"1 cow & {bulls} bulls"
-    else:
-        result = f"{cows} cows & {bulls} bulls"
-    return f"\n{result}\n"
+    return f"\n{cows} {'cow' if cows == 1 else 'cows'} & {bulls} {'bull' if bulls == 1 else 'bulls'}\n"
 
 
 def cows_and_bulls():
@@ -62,4 +53,3 @@ def cows_and_bulls():
 
 if __name__ == "__main__":
     cows_and_bulls()
-    
