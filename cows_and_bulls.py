@@ -40,13 +40,13 @@ def compare(guess, number):
 
 def cows_and_bulls():
     number = random.randint(1000, 9999)
-    guesses = 0
+    guesses = 1
     while True:
         try:
             guess = int(input("Gues number between 1000 to 9999:\n"))
             if 999 < guess < 10000:
                 if guess == number:
-                    print(f"You guessed it after {guesses} guesses!")
+                    print(f"You guessed it after {guesses} {'guess' if guesses == 1 else 'guesses'}!")
                     break
                 else:
                     print(compare(guess, number))
